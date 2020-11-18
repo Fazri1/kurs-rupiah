@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="id">
+  <head>
+    <title>Chatbox</title>
+    <style>
+      #chat {
+        position: fixed;
+        bottom: 10px;
+      }
+      .kotak {
+        width: 300px;
+        height: 250px;
+        border: solid 1px black;
+        background-color: aquamarine;
+      }
+      .input {
+        width: 248px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat">
+      <div class="kotak"></div>
+      <input type="text" class="input" placeholder="type..." /><button
+        class="btn"
+      >
+        Kirim
+      </button>
+    </div>
+
+    <script>
+      var tombol = document.querySelector(".btn");
+      var kotak = document.querySelector(".kotak");
+      var input = document.querySelector(".input");
+
+      tombol.addEventListener("click", function () {
+        kotak.innerHTML = kotak.innerHTML + "<br>" + "Pesan: " + input.value;
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
